@@ -113,7 +113,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation "com.github.Udbhav003:AudioLib:v0.0.2-alpha"
+  implementation "com.github.Udbhav003:AudioLib:v0.0.3-alpha"
 }
 
 if (isNewArchitectureEnabled()) {

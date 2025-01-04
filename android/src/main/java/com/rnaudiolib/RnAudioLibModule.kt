@@ -1,14 +1,11 @@
 package com.rnaudiolib
 
-import android.content.Context
 import android.content.Intent
 import com.blackend.udbhav.audiolib.AudioLibraryService
 import com.blackend.udbhav.audiolib.AudioPlayerManager
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContext
 import com.facebook.react.module.annotations.ReactModule
 import com.facebook.react.bridge.ReadableArray
-import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.modules.core.DeviceEventManagerModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,18 +31,10 @@ class RnAudioLibModule(reactContext: ReactApplicationContext) :
         mediaUrlsList.add(mediaUrls.getString(i))
       }
     }
-
-//    // Your existing logic
-//    audioServiceIntent.action = "ACTION_SETUP_QUEUE"
-////    audioServiceIntent.putStringArrayListExtra("mediaUrls", ArrayList(mediaUrlsList))
-//
-//    reactApplicationContext.startService(audioServiceIntent)
    audioPlayerManager.setupQueue(mediaUrlsList)
   }
 
   override fun play() {
-//    audioServiceIntent.action = "ACTION_PLAY"
-//    reactApplicationContext.startService(audioServiceIntent)
     audioPlayerManager.play()
   }
 
@@ -68,8 +57,8 @@ class RnAudioLibModule(reactContext: ReactApplicationContext) :
 
   override fun listenProgress() {
     CoroutineScope(Dispatchers.Main).launch {
-      audioPlayerManager.playbackPosition.collectLatest {
-        sendEvent("playbackProgress", it.toString());
+      audioPlayerManager.playbackProgress.collectLatest {
+        sendEvent("playbackProgress", it.toString())
       }
     }
   }

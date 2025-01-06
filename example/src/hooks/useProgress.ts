@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { NativeEventEmitter, NativeModules } from 'react-native';
 
-const { PlayerModule } = NativeModules;
-const playerEmitter = new NativeEventEmitter(PlayerModule);
+const { RNEventEmitter } = NativeModules;
+const playerEmitter = new NativeEventEmitter(RNEventEmitter);
 
 const usePlayerProgress = (): number => {
     const [progress, setProgress] = useState<number>(0);

@@ -6,6 +6,7 @@ import {
 } from 'rn-audio-lib';
 
 import { useEffect } from 'react';
+import Progress from './Progress';
 
 export default function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
+      <Progress />
       <Text style={{ color: 'white' }}>Result: asdasd</Text>
       <Button title="Play" onPress={onClick} />
       <Button title="Pause" onPress={pauseClick} />

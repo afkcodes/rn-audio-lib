@@ -80,6 +80,7 @@ public class RnAudioLibImpl: NSObject, AudioPlayerDelegate {
     eventEmitter?.sendEvent(withName: EventType.playbackProgress.rawValue, body: timer)
   }
 }
+
 //
 //@objc class EventEmitter: RCTEventEmitter {
 //  

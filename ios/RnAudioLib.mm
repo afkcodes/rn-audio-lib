@@ -1,5 +1,6 @@
 #import "RnAudioLib.h"
 #import "rn_audio_lib-Swift.h"
+#import "RNEventEmitter.h"
 
 @implementation RnAudioLib {
   RnAudioLibImpl *audioLibImpl;
@@ -10,7 +11,7 @@ RCT_EXPORT_MODULE()
 - (instancetype) init {
   self = [super self];
   if (self) {
-    audioLibImpl = [[RnAudioLibImpl alloc] initWithEventEmitter:self];
+    audioLibImpl = [[RnAudioLibImpl alloc] initWithEventEmitter: RNEventEmitter.shared];
   }
   return self;
 }
@@ -19,14 +20,6 @@ RCT_EXPORT_MODULE()
     (const facebook::react::ObjCTurboModule::InitParams &)params
 {
     return std::make_shared<facebook::react::NativeRnAudioLibSpecJSI>(params);
-}
-
-+ (BOOL)requiresMainQueueSetup {
-  return TRUE;
-}
-
-- (NSArray<NSString *> *)supportedEvents {
-    return @[@"playbackProgress"];
 }
 
 - (void)pause {

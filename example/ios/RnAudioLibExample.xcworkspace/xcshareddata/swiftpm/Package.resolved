@@ -1,0 +1,15 @@
+{
+  "originHash" : "a8df73055446a649e3c8206b1a5407e018d94bc51aaf1893156a256cc69c84ac",
+  "pins" : [
+    {
+      "identity" : "audiolib",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jignesh-iosdev/AudioLib",
+      "state" : {
+        "branch" : "main",
+        "revision" : "69344618e26765cba1f35d60add5bee34239b2c3"
+      }
+    }
+  ],
+  "version" : 3
+}
